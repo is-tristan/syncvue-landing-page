@@ -1,0 +1,105 @@
+.infoBoxList {
+    display: flex;
+    flex-flow: column nowrap;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 1rem;
+    width: 100%;
+
+    @media (width >=768px) {
+        flex-flow: row nowrap;
+        align-items: stretch;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+    @media (width >=1200px) {
+        gap: 1.5rem;
+        text-align: left;
+    }
+
+    .infoBoxItem {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 0.75rem;
+        align-items: center;
+
+        @media (width >=1200px) {
+            flex-flow: row nowrap;
+            gap: 1rem;
+            flex: 1;
+        }
+
+        .infoBoxItemIcon {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 1rem;
+            height: 1rem;
+            flex-shrink: 0;
+
+            @media (width >=768px) {
+                width: 1.25rem;
+                height: 1.25rem;
+            }
+
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+            }
+
+            &.iconHasBackground {
+                border-radius: 50%;
+                padding: 1.5%;
+                width: 2rem;
+                height: 2rem;
+                
+                @media (width >=1200px) {
+                    width: 3rem;
+                    height: 3rem;
+                    padding: 5%;
+                }
+
+                @media (width >=1512px) {
+                    width: 4rem;
+                    height: 4rem;
+                }
+            }
+        }
+
+        .infoBoxItemContent {
+            display: flex;
+            flex-direction: column;
+            gap: 0.15rem;
+
+            h3 {
+                @media all {
+                    font-size: 1rem;
+                }
+            }
+
+            p {
+                opacity: 0.75;
+
+                @media all {
+                    font-size: 0.75rem;
+                    font-weight: 400;
+                    line-height: 150%;
+                }
+            }
+        }
+    }
+
+    &.stacked {
+        @media all {
+            flex-flow: column nowrap;
+        }
+
+        .infoBoxItem {
+            display: flex;
+            flex-flow: column nowrap;
+        }
+    }
+}

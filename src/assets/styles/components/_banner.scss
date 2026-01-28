@@ -1,0 +1,143 @@
+.banner {
+    position: relative;
+    padding-top: var(--mobileHeaderHeight);
+
+    @media (width >=1200px) {
+        min-height: calc(100vh - 5rem);
+        padding-top: calc(var(--headerHeight) / 1.5);
+        padding-bottom: 5rem;
+    }
+
+    @media (width >=1512px) {
+        min-height: calc(90vh - 5rem);
+    }
+
+    .container {
+        position: relative;
+        z-index: 1;
+
+        @media (width >=1200px) {
+            align-items: flex-start;
+            justify-content: flex-start;
+        }
+
+        .content {
+            @media (width >=1200px) {
+                max-width: 55%;
+                margin: 0 auto 0 0;
+            }
+
+            @media (width >=1512px) {
+                max-width: 45%;
+            }
+        }
+
+        p {
+            margin-bottom: 0;
+            font-weight: 500;
+            max-width: 50ch;
+
+            @media (width >=1512px) {
+                font-size: 1.1rem;
+                max-width: 55ch;
+            }
+        }
+    }
+
+    .bannerVideo {
+        position: absolute;
+        inset: 0;
+        margin: auto;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        scale: 1.1;
+
+        @media (width >=1200px) {
+            aspect-ratio: 16/9;
+            scale: 1;
+        }
+    }
+
+    .backgroundImage {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        z-index: 0;
+        inset: 0;
+        margin: 0 auto;
+        background-size: cover;
+        background-repeat: no-repeat;
+
+        &::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            margin: auto;
+            width: 100%;
+            height: 100%;
+        }
+
+    }
+
+    .bannerDivider {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        width: 100%;
+        height: 11rem;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center bottom;
+    }
+
+    &[data-background-colour="light"] {
+        background-color: var(--lightAlt);
+
+        .buttons {
+            .btn.transparent {
+                border-color: var(--dark);
+                color: var(--dark);
+            }
+        }
+
+        .backgroundImage {
+            &::before {
+                @media (width < 1200px) {
+                    background: var(--lightAlt);
+                }
+            }
+        }
+    }
+
+    &[data-background-colour="dark"] {
+        background-color: var(--dark);
+
+        .backgroundImage {
+            &::before {
+                background: linear-gradient(to right, var(--dark), transparent);
+            }
+        }
+
+        h1,
+        h2,
+        p {
+            color: var(--light);
+        }
+
+        .checklistItem {
+            background: rgba(var(--lightRgb), 0.15);
+            backdrop-filter: blur(10px);
+            color: var(--light);
+            border-color: rgba(var(--lightRgb), 0.25);
+
+            .icon {
+                color: var(--primary);
+            }
+        }
+    }
+}

@@ -1,0 +1,71 @@
+@use "../../init/mixins" as *;
+
+.btn {
+    @include btn();
+
+    &.primary {
+        background: var(--primary);
+        border-color: var(--primary);
+        color: var(--light);
+    }
+
+    &.dark {
+        background: var(--dark);
+        border-color: var(--dark);
+        color: var(--light);
+
+        svg {
+            fill: var(--primary);
+        }
+    }
+
+    &.light {
+        background: var(--light);
+        border-color: var(--light);
+        color: var(--dark);
+    }
+
+    &.transparent {
+        background: transparent;
+        color: #fff;
+        border-color: #fff;
+
+        &.dark {
+            color: var(--dark);
+            border-color: var(--dark);
+
+            svg {
+                fill: var(--dark);
+            }
+
+            &:hover {
+                background: var(--dark);
+                color: var(--light);
+
+                svg {
+                    fill: var(--light);
+                }
+            }
+        }
+    }
+}
+
+.textBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+
+    @media (width >=1200px) {
+        font-size: 1.25rem;
+    }
+    
+    .icon {
+        font-size: 1.25rem;
+
+        @media (width >=1200px) {
+            font-size: 2rem;
+        }
+    }
+}

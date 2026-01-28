@@ -1,0 +1,120 @@
+// Buttons
+@mixin btn() {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    text-align: center;
+    width: auto;
+    padding: 0.875rem 1rem;
+    border: 2px solid transparent;
+    border-radius: var(--btnRadius);
+    font-family: var(--text);
+    text-transform: capitalize;
+    font-size: clamp(0.875rem, 1.1vw, 1rem);
+    line-height: 100%;
+    font-weight: 550;
+    color: var(--light);
+    overflow: hidden;
+    transition: var(--ease);
+    cursor: pointer;
+
+    @media (width >=768px) {
+        flex: 0 0 auto;
+    }
+
+    @media (width >=1512px) {
+        padding: 0.875rem 1.5rem;
+    }
+
+    .icon {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.25rem;
+        width: max-content;
+        height: max-content;
+        transition: var(--ease);
+
+        @media (width >=1200px) {
+            font-size: 1.5rem;
+        }
+    }
+
+    &:hover .icon {
+        transform: translateX(0.25rem);
+    }
+}
+
+// Submenu
+@mixin submenu() {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.625rem;
+    list-style: none;
+    padding: 1rem;
+
+    @media (width < 768px) {
+        display: none;
+        height: 100%;
+        max-height: 15rem;
+        overflow-y: scroll;
+        scrollbar-width: thin;
+        scrollbar-color: var(--primary) transparent;
+    }
+
+    @media (width >=1200px) {
+        position: absolute;
+        z-index: 99999;
+        top: 100%;
+        left: 0;
+        opacity: 0;
+        visibility: hidden;
+        gap: 0.75rem;
+        min-width: max-content;
+        padding: 1.5rem;
+        border-radius: var(--borderRadius);
+        font-size: 0.9rem;
+        font-weight: 600;
+        background: var(--light);
+        color: var(--dark);
+        border: 1px solid rgba(var(--darkRgb), 0.1);
+        box-shadow: 0 0.5rem 1rem rgba(var(--darkRgb), 0.1);
+        transition: all 0.15s ease-in-out;
+    }
+}
+
+// Caret
+@mixin caret() {
+    display: flex;
+    flex-flow: column nowrap;
+    position: relative;
+
+    @media (width >=1200px) {
+        flex-flow: row nowrap;
+        align-items: center;
+        gap: 0.5rem;
+    }
+
+    &::after {
+        content: "";
+        display: inline-block;
+        width: 0;
+        height: 0;
+        margin-left: 0.5rem;
+        vertical-align: middle;
+        border-top: 0.35rem solid var(--primary);
+        border-right: 0.35rem solid transparent;
+        border-left: 0.35rem solid transparent;
+        position: absolute;
+        top: 0.5rem;
+        right: 0;
+        bottom: 0;
+        margin: 0 auto;
+
+        @media (width >=1200px) {
+            position: unset;
+        }
+    }
+}

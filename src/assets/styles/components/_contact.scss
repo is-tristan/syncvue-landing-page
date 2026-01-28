@@ -1,0 +1,51 @@
+.contactRow {
+    background: var(--lightAlt);
+    padding-bottom: 3rem;
+
+    &::before {
+        height: 6rem;
+        width: 100%;
+        background: var(--dark);
+
+        @media (width >= 1200px) {
+            content: '';
+        }
+    }
+
+    @media (width >=1200px) {
+        overflow: visible;
+        .container {
+            padding-top: 0;
+        }
+    }
+}
+
+.contactCol {
+    @media (width >=1200px) {
+        margin-top: -8rem;
+    }
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    background: var(--light);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    border: 1px solid rgba(var(--darkRgb), 0.15);
+
+    @media (width >=768px) {
+        padding: 2rem;
+    }
+
+    @media (width >=1200px) {
+        padding: 3rem;
+    }
+
+    h4 {
+        @media all {
+            text-align: center;
+        }
+    }
+}

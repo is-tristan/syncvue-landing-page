@@ -1,0 +1,34 @@
+:root {
+    font-size: 1rem;
+
+    // Colours
+    --primary: #00B5FF;
+    --primaryRgb: 0, 181, 255;
+    --secondary: #003366;
+    --secondaryRgb: 0, 51, 102;
+    --dark: #000F26;
+    --darkRgb: 0, 15, 38;
+    --light: #fff;
+    --lightRgb: 255, 255, 255;
+    --lightAlt: #f3f8fa;
+    --lightAltRgb: 243, 248, 250;
+
+    // Fonts
+    --heading: "Sharp Sans", ui-sans-serif, sans-serif;
+    --text: "Poppins", ui-sans-serif, sans-serif;
+
+    // Borders & Radius
+    --btnRadius: 0.5rem;
+    --borderRadius: 1rem;
+
+    // Animations
+    --ease: all 0.25s ease;
+
+    // Header
+    --headerHeight: 7rem;
+    --mobileHeaderHeight: 5rem;
+    --adminBarHeight: 2rem;
+
+    // Layout
+    --layoutMaxWidth: 90%;
+}

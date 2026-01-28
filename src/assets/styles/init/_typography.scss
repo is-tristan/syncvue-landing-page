@@ -1,0 +1,161 @@
+@font-face {
+    font-family: "Sharp Sans";
+    src: url("/fonts/sharp-sans-semibold.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 600;
+}
+
+@font-face {
+    font-family: "Sharp Sans";
+    src: url("/fonts/sharp-sans-bold.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 700;
+}
+
+@font-face {
+    font-family: "Poppins";
+    src: url("/fonts/poppins-variable.woff2") format("woff2");
+    font-style: normal;
+    font-weight: 400 700;
+}
+
+/*
+* =============================================
+* Headings
+* ============================================= 
+*/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-family: var(--heading);
+    font-weight: 700;
+    line-height: 1.275;
+    margin: 0;
+    padding: 0;
+    text-wrap: balance;
+}
+
+
+h1 {
+    font-size: clamp(2rem, 3vw, 3rem);
+}
+
+h2 {
+    font-size: clamp(1.75rem, 2.5vw, 2.5rem);
+}
+
+h3 {
+    font-size: clamp(1.5rem, 2vw, 2rem);
+}
+
+h4 {
+    font-size: clamp(1.25rem, 1.25vw, 1.25rem);
+}
+
+h5 {
+    font-size: clamp(1.15rem, 1.15vw, 1.15rem);
+}
+
+h6 {
+    font-size: clamp(1rem, 1vw, 1rem);
+}
+
+/*
+* =============================================
+* Text, lists, inputs, links
+* ============================================= 
+*/
+
+small,
+p,
+ul,
+ol {
+    font-size: clamp(0.9rem, calc(0.9rem + (1 - 0.9) * ((100vw - 20rem) / (1200 - 20))), 1rem);
+    line-height: 1.65;
+    font-weight: 450;
+    text-wrap: pretty;
+
+    @media (width >=768px) and (width <1200px) {
+        text-align: center;
+    }
+}
+
+small {
+    font-family: var(--text);
+    text-transform: none;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    padding: 0;
+
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+ul {
+    margin: 0;
+}
+
+// Eyebrows
+.eyebrow {
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    gap: 0.33rem;
+    color: var(--primary);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.025rem;
+    text-transform: uppercase;
+
+    @media (width >=768px) {
+        justify-content: center;
+        gap: 0.75rem;
+        font-size: 0.8rem;
+        letter-spacing: 0.05rem;
+    }
+
+    @media (width >=1200px) {
+        justify-content: flex-start;
+    }
+
+    .filled {
+        display: flex;
+        flex-shrink: 0;
+        justify-content: center;
+        align-items: center;
+        width: max-content;
+        border-radius: 0.25rem;
+        background: var(--light);
+        color: var(--primary);
+        padding: 0.33rem 0.66rem;
+
+        @media (width >=768px) {
+            padding: 0.4rem 0.66rem;
+        }
+
+        &.primary {
+            background: var(--primary);
+            color: var(--light);
+        }
+
+        &.secondary {
+            background: var(--secondary);
+        }
+    }
+
+    .text {
+        color: var(--dark);
+
+        &.light {
+            color: var(--light);
+        }
+    }
+}

@@ -1,0 +1,104 @@
+---
+import Image from "astro/components/Image.astro";
+const {
+    layoutType = "default",
+    backgroundColour = "light",
+    eyebrowFilledText = "Learn More",
+    eyebrowText = "About Syncvue UK",
+    title,
+    description,
+    imageUrl,
+    buttonTextOne = "Get started now",
+    buttonLinkOne = "#contact",
+    buttonTextTwo = "Our Features",
+    buttonLinkTwo = "#features",
+    hasTextSpinner = false,
+    spinnerTextUrl = "/misc/spinner-text.svg",
+    spinnerLogoUrl = "/syncvue-logo.svg",
+} = Astro.props;
+
+const layoutTypes = {
+    default: "dualCols",
+    rightImage: "dualCols rowReverse",
+    centered: "centered",
+} as const;
+---
+
+<section class={`row section`} data-background-colour={backgroundColour}>
+    <div
+        class={`container ${layoutTypes[layoutType as keyof typeof layoutTypes]}`}
+    >
+        <div class="col contentCol">
+            <div class="content">
+                <div class="heading hasFullStop">
+                    <div class="eyebrow">
+                        <span class="filled primary">{eyebrowFilledText}</span>
+                        <span class="text">{eyebrowText}</span>
+                    </div>
+                    <h2>{title}</h2>
+                    <Image
+                        class="divider"
+                        src="/misc/divider-primary.svg"
+                        alt="Divider"
+                        aria-hidden="true"
+                        width={156}
+                        height={6}
+                        sizes="(max-width: 768px) 100vw, 156px"
+                    />
+                    {
+                        description && (
+                            <div class="description" set:html={description} />
+                        )
+                    }
+                </div>
+                <div class="buttons">
+                    <a class="btn primary" href={buttonLinkOne}>
+                        <span>{buttonTextOne}</span>
+                        <div class="icon material-symbols-rounded">
+                            arrow_right_alt
+                        </div>
+                    </a>
+                    <a class="btn transparent dark" href={buttonLinkTwo}>
+                        <span>{buttonTextTwo}</span>
+                        <div class="icon material-symbols-rounded">
+                            arrow_right_alt
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+        {
+            imageUrl && (
+                <div class="col imageCol">
+                    {hasTextSpinner && (
+                        <div class="textSpinner">
+                            <Image
+                                src={spinnerLogoUrl}
+                                alt="Syncvue Logo"
+                                width={64}
+                                height={64}
+                                class="spinnerLogo"
+                            />
+                            <div class="textSpinnerInner">
+                                <Image
+                                    src={spinnerTextUrl}
+                                    alt="Text Spinner"
+                                    width={128}
+                                    height={128}
+                                />
+                            </div>
+                        </div>
+                    )}
+                    <div class="imageFill">
+                        <Image
+                            src={imageUrl}
+                            alt={title}
+                            width={576}
+                            height={576}
+                        />
+                    </div>
+                </div>
+            )
+        }
+    </div>
+</section>

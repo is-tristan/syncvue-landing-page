@@ -1,0 +1,121 @@
+---
+import Image from "astro/components/Image.astro";
+import data from "../data/testimonials.json";
+---
+
+<section id="testimonials" class="row testimonials colorLight bgSecondary">
+    <div class="container dualCols noPaddingBottom">
+        <div class="heading hasFullStop">
+            <h2>Trusted By Our Customers</h2>
+            <img
+                class="divider"
+                src="/misc/divider-primary.svg"
+                alt=""
+                aria-hidden="true"
+                width="156"
+                height="6"
+                sizes="(max-width: 768px) 100vw, 156px"
+            />
+            <p>
+                SyncVue are proud of the wonderful reviews that we have received
+                from our loyal customers using the SyncVue software.
+            </p>
+        </div>
+    </div>
+    <div class="container">
+        <div
+            id="testimonialsCarousel"
+            class="splide testimonialsCarousel hasPagination paginationFlexStart"
+        >
+            <div class="splide__track" style="overflow: visible !important;">
+                <ul class="splide__list">
+                    {
+                        data.map((testimonial) => (
+                            <li class="splide__slide" id={testimonial.id}>
+                                <div class="testimonialContent">
+                                    <p>{testimonial.review}</p>
+                                    <div
+                                        class="starRating"
+                                        data-rating={testimonial.rating}
+                                    />
+                                    <img
+                                        src="/icons/five-star-rating.svg"
+                                        alt="Five star rating"
+                                        width="96"
+                                        height="24"
+                                    />
+                                </div>
+                                <div class="testimonialMeta">
+                                    <div class="testimonialMetaImage">
+                                        <Image
+                                            src={testimonial.image}
+                                            alt={testimonial.name}
+                                            width={64}
+                                            height={64}
+                                        />
+                                    </div>
+                                    <div class="testimonialMetaInfo">
+                                        <h3>{testimonial.name}</h3>
+                                        <p>{testimonial.position}</p>
+                                    </div>
+                                </div>
+                            </li>
+                        ))
+                    }
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script>
+    import { Splide } from "@splidejs/splide";
+    import "@splidejs/splide/css";
+
+    const testimonialsCarousel = () => {
+        const options = {
+            type: "loop",
+            perMove: 1,
+            perPage: 2,
+            gap: "2rem",
+            pagination: true,
+            arrows: false,
+            autoplay: true,
+            interval: 7500,
+            trimSpace: true,
+            padding: {
+                left: "5",
+                right: "5%",
+            },
+            breakpoints: {
+                1199: {
+                    gap: "1.5rem",
+                    padding: {
+                        left: "25%",
+                        right: "25%",
+                    },
+                },
+                767: {
+                    perPage: 1,
+                    gap: "0.5rem",
+                    padding: {
+                        left: "7.5%",
+                        right: "7.5%",
+                    },
+                },
+            },
+        };
+        const testimonialsCarousel = document.getElementById(
+            "testimonialsCarousel"
+        );
+        if (testimonialsCarousel) {
+            const testimonialsCarouselInstance = new Splide(
+                testimonialsCarousel,
+                options
+            );
+            testimonialsCarouselInstance.mount();
+        }
+    };
+
+    testimonialsCarousel();
+</script>

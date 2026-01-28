@@ -1,0 +1,42 @@
+[
+    {
+        "id": "1",
+        "name": "Jamie Smith",
+        "image": "/images/testimonials/jamie-smith.webp",
+        "position": "Happy Business Owner",
+        "rating": 5,
+        "review": "“SyncVue has totally revolutionized the way we look at syncing our business records. Their approach is practical, engaging, and genuinely tailored to real-world business needs. The platform has brought clarity and consistency to our data management, saving us hours every week."
+    },
+    {
+        "id": "2",
+        "name": "Jamie Smith",
+        "image": "/images/testimonials/jamie-smith.webp",
+        "position": "Happy Business Owner",
+        "rating": 5,
+        "review": "“SyncVue has totally revolutionized the way we look at syncing our business records. Their approach is practical, engaging, and genuinely tailored to real-world business needs. The platform has brought clarity and consistency to our data management, saving us hours every week."
+    },
+    {
+        "id": "3",
+        "name": "Jamie Smith",
+        "image": "/images/testimonials/jamie-smith.webp",
+        "position": "Happy Business Owner",
+        "rating": 5,
+        "review": "“SyncVue has totally revolutionized the way we look at syncing our business records. Their approach is practical, engaging, and genuinely tailored to real-world business needs. The platform has brought clarity and consistency to our data management, saving us hours every week."
+    },
+    {
+        "id": "4",
+        "name": "Jamie Smith",
+        "image": "/images/testimonials/jamie-smith.webp",
+        "position": "Happy Business Owner",
+        "rating": 5,
+        "review": "“SyncVue has totally revolutionized the way we look at syncing our business records. Their approach is practical, engaging, and genuinely tailored to real-world business needs. The platform has brought clarity and consistency to our data management, saving us hours every week."
+    },
+    {
+        "id": "5",
+        "name": "Jamie Smith",
+        "image": "/images/testimonials/jamie-smith.webp",
+        "position": "Happy Business Owner",
+        "rating": 5,
+        "review": "“SyncVue has totally revolutionized the way we look at syncing our business records. Their approach is practical, engaging, and genuinely tailored to real-world business needs. The platform has brought clarity and consistency to our data management, saving us hours every week."
+    }
+]

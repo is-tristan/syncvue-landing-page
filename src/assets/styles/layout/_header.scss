@@ -1,0 +1,83 @@
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 0 auto 0;
+    color: var(--light);
+    position: absolute;
+    z-index: 999;
+}
+
+.headerContainer {
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3rem;
+    width: 100%;
+    height: var(--mobileHeaderHeight);
+
+    @media all {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+
+    @media (width >=1200px) {
+        height: var(--headerHeight);
+    }
+}
+
+.logo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    img {
+        width: 100%;
+        height: 100%;
+        max-height: 3rem;
+        object-fit: contain;
+
+        @media (width >=1512px) {
+            max-height: 4rem;
+        }
+    }
+}
+
+.headerActions {
+    display: flex;
+    align-items: center;
+    flex-flow: row nowrap;
+    gap: 1rem;
+
+    .trp-language-switcher {
+        backdrop-filter: blur(1.5rem);
+        background: rgba(var(--lightRgb), 0.05);
+        transition: var(--ease);
+
+        @media (width >=1200px) {
+            padding-right: 0.5rem;
+            padding-left: 0.5rem;
+        }
+
+        .trp-language-item {
+            padding-right: 0.5rem;
+
+            &:hover {
+                background: transparent;
+            }
+        }
+
+        .trp-shortcode-arrow {
+            width: 1rem;
+            height: 1rem;
+
+            path {
+                fill: var(--primary);
+                stroke: var(--primary);
+            }
+        }
+    }
+}
