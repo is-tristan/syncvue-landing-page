@@ -64,13 +64,6 @@
         z-index: 0;
         inset: 0;
         margin: 0 auto;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: 85%;
-
-        @media (width >=1200px) {
-            background-position: center;
-        }
 
         &::before {
             content: '';
@@ -79,6 +72,14 @@
             margin: auto;
             width: 100%;
             height: 100%;
+        }
+
+        img {
+            object-position: 85% center;
+
+            @media (width >=1200px) {
+                object-position: center;
+            }
         }
 
     }
@@ -104,7 +105,7 @@
     }
 
     .checklist {
-        @media (width >= 768px) and (width < 1200px) {
+        @media (width >=768px) and (width < 1200px) {
             justify-content: center;
         }
     }

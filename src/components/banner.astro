@@ -1,5 +1,6 @@
 ---
 import Divider from "./divider.astro";
+import Image from "astro/components/Image.astro";
 const {
 	backgroundColour = "dark",
 	eyebrow = "Syncvue UK",
@@ -62,11 +63,18 @@ const {
 	</div>
 	{
 		imageUrl && (
-			<div
-				class="backgroundImage"
-				style={`background-image: url(${imageUrl})`}
-				aria-hidden="true"
-			></div>
+			<div class="backgroundImage">
+				<Image
+					aria-hidden="true"
+					src={imageUrl}
+					alt={title}
+					width={1920}
+					height={1080}
+					layout="full-width"
+					style="object-fit: cover;"
+					fetchpriority="high"
+				/>
+			</div>
 		)
 	}
 	<div
