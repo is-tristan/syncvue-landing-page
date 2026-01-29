@@ -68,6 +68,7 @@
 				name="plan"
 				class="formInput"
 				required
+				aria-label="Select a plan"
 			>
 				<option value="">Select a plan</option>
 				<option value="lite">Lite Plan</option>
@@ -83,16 +84,18 @@
 				placeholder="Add some information about your business and requirements."
 				required
 				autocomplete="off"
-				rows="4"
+				rows="6"
 				aria-label="Message"
 			></textarea>
 		</div>
 	</div>
 	<div class="buttons centered">
 		<button
-			class="btn dark"
+			class="btn transparent dark"
 			type="submit"
-			>Send Message</button
 		>
+			<span>Send Message</span>
+			<div class="icon material-symbols-rounded">send</div>
+		</button>
 	</div>
 </form>

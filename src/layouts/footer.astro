@@ -23,15 +23,17 @@ import SocialLinks from "../components/social-links.astro";
 			<div class="seperator"></div>
 			<a
 				class="badge"
-				href="#"
+				href="https://www.google.com/search?q=syncvue+uk"
 				target="_blank"
 				rel="noopener noreferrer"
 			>
-				<img
+				<Image
 					src="/icons/google-badge-stars-icon.svg"
 					alt="Google"
 					width={123}
 					height={25}
+					loading="lazy"
+					fetchpriority="low"
 				/>
 				<span><strong>4.9</strong> Based on <strong>234+</strong> reviews</span>
 			</a>

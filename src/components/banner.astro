@@ -30,7 +30,10 @@ const {
 					<span class="text light">{eyebrow}</span>
 				</div>
 				<h1 set:html={title} />
-				<Divider />
+				<Divider
+					loading="eager"
+					fetchpriority="high"
+				/>
 				<p>{description}</p>
 			</div>
 			{
@@ -54,7 +57,7 @@ const {
 							href={buttonLink}
 						>
 							<span>{buttonText}</span>
-							<div class="icon material-symbols-rounded"> arrow_right_alt </div>
+							<div class="icon material-symbols-rounded">arrow_right_alt</div>
 						</a>
 					</div>
 				)
@@ -72,14 +75,21 @@ const {
 					height={1080}
 					layout="full-width"
 					style="object-fit: cover;"
+					loading="eager"
 					fetchpriority="high"
 				/>
 			</div>
 		)
 	}
-	<div
-		class="bannerDivider"
-		style={`background-image: url(/misc/banner-divider-light.svg)`}
-	>
+	<div class="bannerDivider">
+		<Image
+			src="/misc/banner-divider-light.svg"
+			alt="Banner Divider"
+			width={1920}
+			height={176}
+			layout="full-width"
+			loading="eager"
+			fetchpriority="high"
+		/>
 	</div>
 </section>
