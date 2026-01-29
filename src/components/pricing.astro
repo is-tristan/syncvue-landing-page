@@ -1,0 +1,92 @@
+---
+const {
+	eyebrowFilledText = "Learn More",
+	eyebrowText = "About Our Pricing",
+	heading = "Simple and transparent pricing",
+} = Astro.props;
+
+import Divider from "./divider.astro";
+import data from "../data/pricing.json";
+---
+
+<section
+	id="pricing"
+	class="row pricing"
+>
+	<div class="container centered noPaddingBottom">
+		<div class="heading hasFullStop">
+			<div class="eyebrow">
+				<span class="filled primary">{eyebrowFilledText}</span>
+				<span class="text">{eyebrowText}</span>
+			</div>
+			<h2>{heading}</h2>
+			<Divider />
+		</div>
+	</div>
+
+	<div class="container pricingItems">
+		{
+			data.map((item) => (
+				<article
+					class="col pricingItem"
+					data-featured={item["is-featured"]}
+					data-plan={item.name.toLowerCase()}
+				>
+					<div class="itemHeading">
+						<div class="leftContent">
+							<h2>{item.price}</h2>
+							<p>{item.length}</p>
+						</div>
+						<div class="rightContent">
+							<h3>{item.name}</h3>
+						</div>
+					</div>
+					<div class="itemContent">
+						<p>{item.description}</p>
+					</div>
+					<div class="featureItems">
+						{item.features.map((feature) => (
+							<div class="featureItem">
+								<span class="icon material-symbols-rounded colorPrimary">
+									check
+								</span>
+								<span>{feature}</span>
+							</div>
+						))}
+					</div>
+					<div class="buttons">
+						<div class="button">
+							<a
+								href="javascript:void(0)"
+								class="btn primary noHover shoppingCartBtn"
+							>
+								<span>Choose Plan</span>
+								<div class="icon material-symbols-rounded">add_shopping_cart</div>
+							</a>
+						</div>
+					</div>
+				</article>
+			))
+		}
+	</div>
+</section>
+
+<script>
+	const handleContactForm = () => {
+		let contact = document.querySelector("#contact");
+		if (!contact) return;
+		let contactFormPlan = document.querySelector("#plan");
+		if (!contactFormPlan) return;
+		const pricingItems = document.querySelectorAll(".pricingItem");
+		if (!pricingItems.length) return;
+		pricingItems.forEach((item) => {
+			let pricingPlan = item.getAttribute("data-plan");
+			if (!pricingPlan) return;
+			item.addEventListener("click", () => {
+				contact.scrollIntoView({ behavior: "smooth" });
+				(contactFormPlan as HTMLSelectElement).value = pricingPlan as string;
+			});
+		});
+	};
+	document.addEventListener("DOMContentLoaded", handleContactForm);
+</script>

@@ -1,77 +1,77 @@
 ---
-import Image from "astro/components/Image.astro";
+import Divider from "./divider.astro";
 const {
-    backgroundColour = "dark",
-    eyebrow = "Syncvue UK",
-    title,
-    description,
-    imageUrl,
-    checkList = [
-        {
-            icon: "check_circle",
-            text: "Checklist item 1",
-        },
-    ],
-    buttonText = "Get started now",
-    buttonLink = "#contact",
+	backgroundColour = "dark",
+	eyebrow = "Syncvue UK",
+	title,
+	description,
+	imageUrl,
+	checkList = [
+		{
+			icon: "check_circle",
+			text: "",
+		},
+	],
+	buttonText,
+	buttonLink,
 } = Astro.props;
 ---
 
-<section class="row banner" data-background-colour={backgroundColour}>
-    <div class="container">
-        <div class="content">
-            <div class="heading hasFullStop">
-                <div class="eyebrow">
-                    <span class="filled primary">Welcome To</span>
-                    <span class="text light">{eyebrow}</span>
-                </div>
-                <h1>{title}</h1>
-                <Image
-                    class="divider"
-                    src="/misc/divider-primary.svg"
-                    alt="Divider"
-                    aria-hidden="true"
-                    width={156}
-                    height={6}
-                    sizes="(max-width: 768px) 100vw, 156px"
-                />
-                <p>{description}</p>
-            </div>
-            {
-                checkList.length > 0 && (
-                    <div class="checklist">
-                        {checkList.map(
-                            (item: { icon: string; text: string }) => (
-                                <div class="checklistItem">
-                                    <div class="icon material-symbols-rounded">
-                                        {item.icon}
-                                    </div>
-                                    <span>{item.text}</span>
-                                </div>
-                            )
-                        )}
-                    </div>
-                )
-            }
-            <div class="buttons">
-                <a class="btn primary" href={buttonLink}>
-                    <span>{buttonText}</span>
-                    <div class="icon material-symbols-rounded">
-                        arrow_right_alt
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
-    <div
-        class="backgroundImage"
-        style={`background-image: url(${imageUrl})`}
-        aria-hidden="true"
-    >
-    </div>
-    <div
-        class="bannerDivider"
-        style={`background-image: url(/misc/banner-divider-light.svg)`}
-    >
-    </div>
+<section
+	class="row banner"
+	data-background-colour={backgroundColour}
+>
+	<div class="container">
+		<div class="content">
+			<div class="heading hasFullStop">
+				<div class="eyebrow">
+					<span class="filled primary">Welcome To</span>
+					<span class="text light">{eyebrow}</span>
+				</div>
+				<h1 set:html={title} />
+				<Divider />
+				<p>{description}</p>
+			</div>
+			{
+				checkList.length > 0 &&
+					checkList.some((item: { text: string }) => item.text !== "") && (
+						<div class="checklist">
+							{checkList.map((item: { icon: string; text: string }) => (
+								<div class="checklistItem">
+									<div class="icon material-symbols-rounded">{item.icon}</div>
+									<span>{item.text}</span>
+								</div>
+							))}
+						</div>
+					)
+			}
+			{
+				buttonText && buttonLink && (
+					<div class="buttons">
+						<a
+							class="btn primary"
+							href={buttonLink}
+						>
+							<span>{buttonText}</span>
+							<div class="icon material-symbols-rounded"> arrow_right_alt </div>
+						</a>
+					</div>
+				)
+			}
+		</div>
+	</div>
+	{
+		imageUrl && (
+			<div
+				class="backgroundImage"
+				style={`background-image: url(${imageUrl})`}
+				aria-hidden="true"
+			></div>
+		)
+	}
+	<div
+		class="bannerDivider"
+		style={`background-image: url(/misc/banner-divider-light.svg)`}
+	>
+	</div>
 </section>

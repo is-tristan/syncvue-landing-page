@@ -9,12 +9,22 @@
 
 // Layout
 @use "layout/header" as *;
+@use "layout/footer" as *;
 
 // UI
 @use "ui/handlers/buttons" as *;
 @use "ui/carousel/splide" as *;
+@use "ui/misc/contact-items" as *;
+@use "ui/handlers/forms" as *;
+@use "ui/misc/social-icons" as *;
 
 // Components
 @use "components/banner" as *;
 @use "components/checklist" as *;
 @use "components/section" as *;
+@use "components/testimonials" as *;
+@use "components/pricing" as *;
+@use "components/contact" as *;
+
+// Pages
+@use "pages/policies" as *;

@@ -1,0 +1,73 @@
+---
+import ContactForm from "./contact-form.astro";
+import Divider from "./divider.astro";
+---
+
+<section
+	id="contact"
+	class="row contactRow bgPrimary"
+>
+	<div class="container dualCols rowReverse">
+		<div class="col contentCol colorLight">
+			<div class="heading hasFullStop">
+				<div class="eyebrow">
+					<span class="filled secondary">Contact</span>
+					<span class="text light">Us Today</span>
+				</div>
+				<h2>Contact SyncVue Today</h2>
+				<p
+					>Reach out today and one of our onboarding experts will guide you through the
+					benefits of switching your business to SyncVue.</p
+				>
+			</div>
+			<div class="contactItems">
+				<a
+					class="contactItem"
+					href="tel:02033555615"
+					target="_blank"
+				>
+					<div class="icon material-symbols-rounded">phone</div>
+					<div class="text">
+						<div class="label">Phone</div>
+						<div class="value">0203 355 5615</div>
+					</div>
+				</a>
+				<a
+					class="contactItem"
+					href="mailto:info@syncvue.co.uk"
+					target="_blank"
+				>
+					<div class="icon material-symbols-rounded">email</div>
+					<div class="text">
+						<div class="label">Email</div>
+						<div class="value">info@syncvue.co.uk</div>
+					</div>
+				</a>
+				<a
+					class="contactItem"
+					href="https://maps.app.goo.gl/ozdbvVZArMykEkKr8"
+					target="_blank"
+				>
+					<div class="icon material-symbols-rounded">map</div>
+					<div class="text">
+						<div class="label">Address</div>
+						<div class="value">6D Thane Works, London N7 7NU, United Kingdom</div>
+					</div>
+				</a>
+			</div>
+		</div>
+		<div class="col contactCol">
+			<div class="formCol">
+				<div class="heading centered">
+					<h3>Contact Us</h3>
+					<Divider />
+					<p
+						>Fill out the form below and our team will aim to respond within 24-48
+						hours.</p
+					>
+				</div>
+				<ContactForm />
+			</div>
+		</div>
+	</div>
+</section>

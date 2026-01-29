@@ -1,0 +1,13 @@
+---
+import Image from "astro/components/Image.astro";
+const { src = "/misc/divider-primary.svg" } = Astro.props;
+---
+
+<Image
+	src={src}
+	alt="Divider"
+	aria-hidden="true"
+	width="156"
+	height="6"
+	sizes="(max-width: 768px) 100vw, 156px"
+/>

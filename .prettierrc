@@ -2,9 +2,10 @@
     "singleQuote": false,
     "trailingComma": "es5",
     "semi": true,
-    "printWidth": 80,
+    "printWidth": 100,
     "tabWidth": 4,
-    "useTabs": false,
+    "useTabs": true,
     "arrowParens": "always",
-    "htmlWhitespaceSensitivity": "ignore"
+    "singleAttributePerLine": true,
+    "htmlWhitespaceSensitivity": "strict"
 }

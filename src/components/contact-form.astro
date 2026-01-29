@@ -1,0 +1,98 @@
+---
+
+---
+
+<form
+	class="contactForm"
+	action="https://api.web3forms.com/submit"
+	method="POST"
+>
+	<input
+		type="hidden"
+		name="access_key"
+		value="61e46238-61f5-431a-89cc-736354f1d55e"
+	/>
+	<input
+		type="hidden"
+		name="subject"
+		value="New Contact Form Submission from Syncvue UK"
+	/>
+	<input
+		type="hidden"
+		name="from_name"
+		value="Syncvue UK Contact Form"
+	/>
+	<div class="formItems">
+		<div class="formItem">
+			<input
+				id="name"
+				name="name"
+				class="formInput"
+				placeholder="Full Name*"
+				type="text"
+				required
+				autocomplete="name"
+				aria-label="Full Name Required"
+			/>
+		</div>
+		<div class="formItem itemHalf">
+			<input
+				id="email"
+				name="email"
+				class="formInput"
+				placeholder="Email*"
+				type="email"
+				required
+				autocomplete="email"
+				autocapitalize="off"
+				pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$"
+				aria-label="Email Required"
+			/>
+		</div>
+		<div class="formItem itemHalf">
+			<input
+				id="phone"
+				name="phone"
+				class="formInput"
+				placeholder="Phone*"
+				type="tel"
+				required
+				autocomplete="tel"
+				pattern="^\+?[1-9]\d{1,14}$"
+				aria-label="Phone Number Required"
+			/>
+		</div>
+		<div class="formItem">
+			<select
+				id="plan"
+				name="plan"
+				class="formInput"
+				required
+			>
+				<option value="">Select a plan</option>
+				<option value="lite">Lite Plan</option>
+				<option value="premium">Premium Plan</option>
+				<option value="enterprise">Enterprise Plan</option>
+			</select>
+		</div>
+		<div class="formItem">
+			<textarea
+				class="formInput"
+				id="message"
+				name="message"
+				placeholder="Add some information about your business and requirements."
+				required
+				autocomplete="off"
+				rows="4"
+				aria-label="Message"
+			></textarea>
+		</div>
+	</div>
+	<div class="buttons centered">
+		<button
+			class="btn dark"
+			type="submit"
+			>Send Message</button
+		>
+	</div>
+</form>

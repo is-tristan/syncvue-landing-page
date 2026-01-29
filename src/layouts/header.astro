@@ -10,12 +10,13 @@ const phoneNumber = "0203 355 5615";
         </div>
         <div class="headerActions">
             <a class="textBtn" href={`tel:${phoneNumber}`} target="_blank">
+                <span class="hidden-l hidden-xl">Call</span>
                 <div class="icon material-symbols-rounded">phone_in_talk</div>
-                <span>{phoneNumber}</span>
+                <span class="hidden-s hidden-m">{phoneNumber}</span>
             </a>
             <a class="btn primary" href="#contact">
-                <span>Get started now</span>
-                <div class="icon material-symbols-rounded">arrow_right_alt</div>
+                <span>Get started</span>
+                <div class="icon hidden-s hidden-m material-symbols-rounded">arrow_right_alt</div>
             </a>
         </div>
     </div>

@@ -3,6 +3,14 @@
 .btn {
     @include btn();
 
+    &.noHover {
+        &:hover {
+            .icon {
+                transform: unset;
+            }
+        }
+    }
+
     &.primary {
         background: var(--primary);
         border-color: var(--primary);
@@ -14,7 +22,7 @@
         border-color: var(--dark);
         color: var(--light);
 
-        svg {
+        .icon {
             fill: var(--primary);
         }
     }
@@ -34,7 +42,7 @@
             color: var(--dark);
             border-color: var(--dark);
 
-            svg {
+            .icon {
                 fill: var(--dark);
             }
 
@@ -42,7 +50,7 @@
                 background: var(--dark);
                 color: var(--light);
 
-                svg {
+                .icon {
                     fill: var(--light);
                 }
             }
@@ -60,9 +68,9 @@
     @media (width >=1200px) {
         font-size: 1.25rem;
     }
-    
+
     .icon {
-        font-size: 1.25rem;
+        font-size: 1.5rem;
 
         @media (width >=1200px) {
             font-size: 2rem;

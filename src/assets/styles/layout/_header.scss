@@ -52,6 +52,10 @@
     flex-flow: row nowrap;
     gap: 1rem;
 
+    @media (width >=768px) {
+        gap: 1.5rem;
+    }
+
     .trp-language-switcher {
         backdrop-filter: blur(1.5rem);
         background: rgba(var(--lightRgb), 0.05);

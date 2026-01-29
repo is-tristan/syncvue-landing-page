@@ -1,0 +1,62 @@
+---
+import Layout from "./layout.astro";
+import Banner from "../components/banner.astro";
+import Section from "../components/section.astro";
+import Testimonials from "../components/testimonials.astro";
+import Pricing from "../components/pricing.astro";
+import Contact from "../components/contact.astro";
+---
+
+<Layout>
+	<Banner
+		title="Built for wholesalers<span class='colorSecondary'>,</span> by wholesalers"
+		description="SyncVue connects your payment terminal to your invoicing system so you can find outstanding invoices, take part or full payments, and reconcile automatically while the customer is still at the counter. "
+		imageUrl="/images/banner.webp"
+		checkList={[
+			{
+				icon: "check_circle",
+				text: "No paperwork later",
+			},
+			{
+				icon: "check_circle",
+				text: "No missed payments",
+			},
+			{
+				icon: "check_circle",
+				text: "No chasing tomorrow",
+			},
+			{
+				icon: "check_circle",
+				text: "Save time & money",
+			},
+		]}
+		buttonText="About SyncVue"
+		buttonLink="#about-us"
+	/>
+	<Section
+		id="about-us"
+		layoutType="rightImage"
+		backgroundColour="var(--lightAlt)"
+		title="Businesses utilising SyncVue save time and money"
+		description="<p><strong>Thousands of pounds</strong> are lost every year to missed payments from part-paid or forgotten invoices.</p><p>Countless hours vanish in admin, chasing clients, checking statements, and matching payments to invoices by hand. It's slow, stressful, and leaves plenty of room for costly mistakes.</p><p> Even one missed <strong>£2,000 payment a month</strong> is common in this industry, and that adds up fast.</p> <p> With SyncVue, you can see every payment <strong>clearly and automatically</strong> match transactions to invoices, so nothing slips through the cracks.</p>"
+		imageUrl="/images/first-image.webp"
+		buttonTextOne="Testimonials"
+		buttonLinkOne="#testimonials"
+		buttonTextTwo="Our Features"
+		buttonLinkTwo="#how-it-works"
+		hasTextSpinner={true}
+	/>
+	<Testimonials />
+	<Section
+		id="how-it-works"
+		backgroundColour="var(--light)"
+		title="Businesses utilising SyncVue save time and money"
+		description="<p><strong>Built with the wholesale markets, not adapted from retail.</strong> SyncVue was built in response to real problems raised by traders we already work with.</p> <p>Ish Sea Food, a trader at Billingsgate Market, told us about the daily struggle of tracking invoices, part payments, and credit customers in a fast-moving market environment. That same problem came up again and again across the industry.</p> <p>We spent time on the ground speaking with traders at Billingsgate, Smithfield, Spitalfields, and similar wholesale markets, understanding how payments really work and where time and money are lost.</p> <p>SyncVue is the result of that research and hands-on experience — a simple solution built specifically for wholesale market traders, not adapted from retail or office-based systems.</p>"
+		imageUrl="/images/second-image.webp"
+		buttonTextOne="View Pricing"
+		buttonLinkOne="#pricing"
+		hasTextSpinner={true}
+	/>
+	<Pricing />
+	<Contact />
+</Layout>

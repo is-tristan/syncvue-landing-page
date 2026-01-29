@@ -1,0 +1,47 @@
+---
+import Image from "astro/components/Image.astro";
+import SocialLinks from "../components/social-links.astro";
+---
+
+<footer
+	id="footer"
+	class="footer bgLight"
+>
+	<div class="container footerContainer centered">
+		<div class="footerLogo">
+			<Image
+				src="/syncvue-logo-secondary.svg"
+				alt="Syncvue Logo"
+				width={128}
+				height={128}
+			/>
+		</div>
+		<div class="footerLinks">
+			<SocialLinks />
+			<div class="seperator"></div>
+			<a
+				class="badge"
+				href="#"
+				target="_blank"
+				rel="noopener noreferrer"
+			>
+				<img
+					src="/icons/google-badge-stars-icon.svg"
+					alt="Google"
+					width={123}
+					height={25}
+				/>
+				<span><strong>4.9</strong> Based on <strong>234+</strong> reviews</span>
+			</a>
+		</div>
+		<div class="copyright">
+			<div class="copyrightText"
+				><span>COPYRIGHT 2026 SYNCVUE UK</span> <span class="copyrightSeperator">|</span> <span>ALL RIGHTS RESERVED</span>
+			</div>
+			<div class="copyrightLinks">
+				<a href="/privacy-policy">Privacy Policy</a>
+				<a href="/end-user-license-agreement">End User License Agreement</a>
+			</div>
+		</div>
+	</div>
+</footer>
