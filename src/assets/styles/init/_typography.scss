@@ -1,15 +1,9 @@
 @font-face {
     font-family: "Sharp Sans";
-    src: url("/fonts/sharp-sans-semibold.woff2") format("woff2");
-    font-style: normal;
-    font-weight: 600;
-}
-
-@font-face {
-    font-family: "Sharp Sans";
     src: url("/fonts/sharp-sans-bold.woff2") format("woff2");
     font-style: normal;
     font-weight: 700;
+    font-display: swap;
 }
 
 @font-face {
@@ -17,6 +11,7 @@
     src: url("/fonts/poppins-variable.woff2") format("woff2");
     font-style: normal;
     font-weight: 400 700;
+    font-display: swap;
 }
 
 /*
