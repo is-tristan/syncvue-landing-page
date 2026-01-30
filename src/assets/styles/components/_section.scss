@@ -38,21 +38,21 @@
             width: 33.33%;
             height: 33.33%;
             object-fit: contain;
+            color: var(--light);
+
+            svg {
+                width: 100%;
+                height: 100%;
+            }
         }
 
-        .textSpinnerInner {
+        .spinnerText {
             display: flex;
             justify-content: center;
             align-items: center;
             width: 85%;
             height: 85%;
             animation: spin 15s linear infinite;
-
-            img {
-                width: 100%;
-                height: 100%;
-                object-fit: contain;
-            }
 
             @keyframes spin {
                 from {

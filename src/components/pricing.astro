@@ -3,10 +3,14 @@ const {
 	eyebrowFilledText = "Learn More",
 	eyebrowText = "About Our Pricing",
 	heading = "Simple and transparent pricing",
-} = Astro.props;
+} = Astro.props
 
-import Divider from "./divider.astro";
-import data from "../data/pricing.json";
+import Divider from "./divider.astro"
+import data from "../data/pricing.json"
+const cartIcon =
+	'<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M440-600v-120H320v-80h120v-120h80v120h120v80H520v120h-80ZM280-80q-33 0-56.5-23.5T200-160q0-33 23.5-56.5T280-240q33 0 56.5 23.5T360-160q0 33-23.5 56.5T280-80Zm400 0q-33 0-56.5-23.5T600-160q0-33 23.5-56.5T680-240q33 0 56.5 23.5T760-160q0 33-23.5 56.5T680-80ZM40-800v-80h131l170 360h280l156-280h91L692-482q-11 20-29.5 31T622-440H324l-44 80h480v80H280q-45 0-68.5-39t-1.5-79l54-98-144-304H40Z"/></svg>'
+const checkMarkIcon =
+	'<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="M382-240 154-468l57-57 171 171 367-367 57 57-424 424Z"/></svg>'
 ---
 
 <section
@@ -47,9 +51,10 @@ import data from "../data/pricing.json";
 					<div class="featureItems">
 						{item.features.map((feature) => (
 							<div class="featureItem">
-								<span class="icon material-symbols-rounded colorPrimary">
-									check
-								</span>
+								<div
+									class="icon colorPrimary"
+									set:html={checkMarkIcon}
+								/>
 								<span>{feature}</span>
 							</div>
 						))}
@@ -57,7 +62,10 @@ import data from "../data/pricing.json";
 					<div class="buttons">
 						<button class="btn primary noHover shoppingCartBtn">
 							<span>Choose Plan</span>
-							<div class="icon material-symbols-rounded">add_shopping_cart</div>
+							<div
+								class="icon"
+								set:html={cartIcon}
+							/>
 						</button>
 					</div>
 				</article>
@@ -68,20 +76,20 @@ import data from "../data/pricing.json";
 
 <script>
 	const handleContactForm = () => {
-		let contact = document.querySelector("#contact");
-		if (!contact) return;
-		let contactFormPlan = document.querySelector("#plan");
-		if (!contactFormPlan) return;
-		const pricingItems = document.querySelectorAll(".pricingItem");
-		if (!pricingItems.length) return;
+		let contact = document.querySelector("#contact .formCol")
+		if (!contact) return
+		let contactFormPlan = document.querySelector("#plan")
+		if (!contactFormPlan) return
+		const pricingItems = document.querySelectorAll(".pricingItem")
+		if (!pricingItems.length) return
 		pricingItems.forEach((item) => {
-			let pricingPlan = item.getAttribute("data-plan");
-			if (!pricingPlan) return;
+			let pricingPlan = item.getAttribute("data-plan")
+			if (!pricingPlan) return
 			item.addEventListener("click", () => {
-				contact.scrollIntoView({ behavior: "smooth" });
-				(contactFormPlan as HTMLSelectElement).value = pricingPlan as string;
-			});
-		});
-	};
-	document.addEventListener("DOMContentLoaded", handleContactForm);
+				contact.scrollIntoView({ behavior: "smooth" })
+				;(contactFormPlan as HTMLSelectElement).value = pricingPlan
+			})
+		})
+	}
+	document.addEventListener("DOMContentLoaded", handleContactForm)
 </script>

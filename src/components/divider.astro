@@ -1,14 +1,13 @@
 ---
-import Image from "astro/components/Image.astro";
-const { src = "/misc/divider-primary.svg", loading="lazy", fetchpriority="low" } = Astro.props;
+const { color = "var(--secondary)" } = Astro.props;
+const divider = `<svg width="177" height="6" viewBox="0 0 177 6" fill="${color}" xmlns="http://www.w3.org/2000/svg"> 
+		<path d="M1.5 0H120L118.5 6H0L1.5 0Z"/>
+		<path d="M128 0H156L154 6H126.5L128 0Z"/>
+		<path d="M163.5 0H177L175 6H162L163.5 0Z"/>
+	</svg>`;
 ---
 
-<Image
-	src={src}
-	alt="Divider"
-	aria-hidden="true"
-	width={156}
-	height={6}
-	loading={loading}
-	fetchpriority={fetchpriority}
+<div
+	class="divider"
+	set:html={divider}
 />

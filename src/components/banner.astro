@@ -1,6 +1,8 @@
 ---
-import Divider from "./divider.astro";
-import Image from "astro/components/Image.astro";
+import Divider from "./divider.astro"
+import Image from "astro/components/Image.astro"
+import Buttons from "./buttons.astro"
+const checkMarkIcon = '<svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="currentColor"><path d="m424-296 282-282-56-56-226 226-114-114-56 56 170 170Zm56 216q-83 0-156-31.5T197-197q-54-54-85.5-127T80-480q0-83 31.5-156T197-763q54-54 127-85.5T480-880q83 0 156 31.5T763-763q54 54 85.5 127T880-480q0 83-31.5 156T763-197q-54 54-127 85.5T480-80Zm0-80q134 0 227-93t93-227q0-134-93-227t-227-93q-134 0-227 93t-93 227q0 134 93 227t227 93Zm0-320Z"/></svg>';
 const {
 	backgroundColour = "dark",
 	eyebrow = "Syncvue UK",
@@ -9,13 +11,16 @@ const {
 	imageUrl,
 	checkList = [
 		{
-			icon: "check_circle",
+			icon: "",
 			text: "",
 		},
 	],
 	buttonText,
 	buttonLink,
-} = Astro.props;
+} = Astro.props
+
+const divider =
+	'<svg width="1920" height="190" viewBox="0 0 1920 190" fill="var(--lightAlt)" xmlns="http://www.w3.org/2000/svg"> <path d="M511.334 185C387.995 173.5 0 119.5 0 119.5V190H1920V0C1587.47 0.812454 1191.46 107.991 1084.09 136C976.721 164.009 634.674 196.5 511.334 185Z"/> </svg>'
 ---
 
 <section
@@ -30,10 +35,7 @@ const {
 					<span class="text light">{eyebrow}</span>
 				</div>
 				<h1 set:html={title} />
-				<Divider
-					loading="eager"
-					fetchpriority="high"
-				/>
+				<Divider />
 				<p>{description}</p>
 			</div>
 			{
@@ -42,7 +44,10 @@ const {
 						<div class="checklist">
 							{checkList.map((item: { icon: string; text: string }) => (
 								<div class="checklistItem">
-									<div class="icon material-symbols-rounded">{item.icon}</div>
+									<div
+										class="icon"
+										set:html={item.icon}
+									/>
 									<span>{item.text}</span>
 								</div>
 							))}
@@ -51,15 +56,10 @@ const {
 			}
 			{
 				buttonText && buttonLink && (
-					<div class="buttons">
-						<a
-							class="btn primary"
-							href={buttonLink}
-						>
-							<span>{buttonText}</span>
-							<div class="icon material-symbols-rounded">arrow_right_alt</div>
-						</a>
-					</div>
+					<Buttons
+						btnOneText={buttonText}
+						btnOneLink={buttonLink}
+					/>
 				)
 			}
 		</div>
@@ -76,20 +76,12 @@ const {
 					layout="full-width"
 					style="object-fit: cover;"
 					loading="eager"
-					fetchpriority="high"
 				/>
 			</div>
 		)
 	}
-	<div class="bannerDivider">
-		<Image
-			src="/misc/banner-divider-light.svg"
-			alt="Banner Divider"
-			width={1920}
-			height={176}
-			layout="full-width"
-			loading="eager"
-			fetchpriority="high"
-		/>
-	</div>
+	<div
+		class="bannerDivider"
+		set:html={divider}
+	/>
 </section>
