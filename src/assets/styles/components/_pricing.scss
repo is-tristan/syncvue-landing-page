@@ -1,14 +1,15 @@
 .pricingItems {
-    margin-top: -2rem;
     gap: 1rem;
 
     @media (width >=1024px) {
         flex-flow: row nowrap;
+        align-items: stretch;
         gap: 2rem;
-        margin-top: 0;
+        margin: 0 auto;
     }
 
     .pricingItem {
+        flex: 0 0 calc(50% - 0.5rem);
         display: flex;
         flex-direction: column;
         gap: 0.66rem;
@@ -40,10 +41,6 @@
 
             * {
                 color: var(--light) !important;
-            }
-
-            @media (width >=1024px) {
-                margin-top: -3rem;
             }
 
             .btn {

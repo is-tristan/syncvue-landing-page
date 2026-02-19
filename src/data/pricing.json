@@ -5,14 +5,13 @@
         "length": "6 Month trial",
         "price": "Free",
         "is-featured": false,
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "description": "Free/Lite is your simple entry to faster payments and less admin.",
         "features": [
-            "Feature 1",
-            "Feature 2",
-            "Feature 3",
-            "Feature 4",
-            "Feature 5",
-            "Feature 6"
+            "Sync basic data",
+            "Track invoices",
+            "Instant part payments",
+            "Save hours on admin",
+            "Auto-reconcile payments"
         ]
     },
     {
@@ -21,30 +20,13 @@
         "length": "/ month",
         "price": "£49.99",
         "is-featured": true,
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
+        "description": "Premium is your full toolkit for instant invoice settlements and total admin savings.",
         "features": [
-            "Feature 1",
-            "Feature 2",
-            "Feature 3",
-            "Feature 4",
-            "Feature 5",
-            "Feature 6"
-        ]
-    },
-    {
-        "id": 3,
-        "name": "Enterprise",
-        "length": "Custom Plans",
-        "price": "POA",
-        "is-featured": false,
-        "description": "Lorem Ipsum is simply dummy text of the printing and typesetting industry.",
-        "features": [
-            "Feature 1",
-            "Feature 2",
-            "Feature 3",
-            "Feature 4",
-            "Feature 5",
-            "Feature 6"
+            "Sync all data",
+            "Track invoices",
+            "Instant part payments",
+            "Save hours on admin",
+            "Auto-reconcile payments"
         ]
     }
 ]
