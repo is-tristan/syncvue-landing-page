@@ -68,6 +68,10 @@
         gap: 1.5rem;
     }
 
+    @media (width >= 1024px) {
+        scale: 1.075;
+    }
+
     .trp-language-switcher {
         backdrop-filter: blur(1.5rem);
         background: rgba(var(--lightRgb), 0.05);
