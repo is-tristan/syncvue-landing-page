@@ -1,0 +1,34 @@
+---
+import Image from "astro/components/Image.astro"
+const xeroLogo = "/logos/xero-logo.svg"
+const sageLogo = "/logos/sage-logo.svg"
+const quickbooksLogo = "/logos/quickbooks-logo.svg"
+---
+
+<div class="integratesWith">
+	<span>Integrates with:</span>
+
+	<div class="logos">
+		<Image
+			src={xeroLogo}
+			alt="Xero"
+			width={64}
+			height={64}
+			loading="eager"
+		/>
+		<Image
+			src={sageLogo}
+			alt="Sage"
+			width={64}
+			height={64}
+			loading="eager"
+		/>
+		<Image
+			src={quickbooksLogo}
+			alt="Quickbooks"
+			width={64}
+			height={64}
+			loading="eager"
+		/>
+	</div>
+</div>
