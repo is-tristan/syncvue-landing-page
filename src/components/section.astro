@@ -2,6 +2,7 @@
 import Image from "astro/components/Image.astro"
 import Divider from "./divider.astro"
 import Buttons from "./buttons.astro"
+import SupportLogos from "./support-logos.astro"
 const {
 	id,
 	layoutType = "default",
@@ -48,7 +49,7 @@ const spinnerText =
 							<div
 								class="spinnerText"
 								set:html={spinnerText}
-							></div>
+							/>
 						</div>
 					)}
 					<div class="imageFill">
@@ -80,6 +81,11 @@ const spinnerText =
 							/>
 						)
 					}
+					<SupportLogos
+						className="cloverStyling"
+						heading="Partnered With Clover."
+						logos={[{ src: "/logos/clover-logo.svg", alt: "Clover" }]}
+					/>
 				</div>
 				<div class="buttons">
 					<Buttons

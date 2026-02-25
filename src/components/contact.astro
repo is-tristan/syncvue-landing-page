@@ -1,5 +1,5 @@
 ---
-import IntegratesWith from "./integrates-with.astro"
+import IntegratesWith from "./support-logos.astro"
 import ContactForm from "./contact-form.astro"
 import Divider from "./divider.astro"
 const phoneIcon =
@@ -72,7 +72,13 @@ const mapIcon =
 					</div>
 				</a>
 			</div>
-			<IntegratesWith />
+			<IntegratesWith
+				logos={[
+					{ src: "/logos/xero-logo.svg", alt: "Xero" },
+					{ src: "/logos/sage-logo.svg", alt: "Sage" },
+					{ src: "/logos/quickbooks-logo.svg", alt: "Quickbooks" },
+				]}
+			/>
 		</div>
 		<div class="col contactCol">
 			<div class="formCol">

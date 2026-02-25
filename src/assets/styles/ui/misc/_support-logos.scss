@@ -1,4 +1,4 @@
-.integratesWith {
+.supportLogos {
     display: flex;
     flex-flow: column nowrap;
     gap: 0.5rem;
@@ -32,6 +32,23 @@
 
             @media (width >=1024px) {
                 height: 3rem;
+            }
+        }
+    }
+
+    &.cloverStyling {
+        font-weight: 600;
+        gap: 1.25rem;
+
+        .logos {
+            img {
+                height: 2rem;
+                width: auto;
+                aspect-ratio: auto;
+
+                @media (width >= 576px) and (width < 1024px) {
+                    width: 100%;
+                }
             }
         }
     }

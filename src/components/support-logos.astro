@@ -1,0 +1,24 @@
+---
+import Image from "astro/components/Image.astro"
+const { className = "", heading = "Integrates with:", logos = [{ src: "", alt: "" }] } = Astro.props
+---
+
+<div class={`supportLogos ${className ? className : undefined}`}>
+	{heading && <span>{heading}</span>}
+
+	{
+		logos.length > 0 && (
+			<div class="logos">
+				{logos.map((logo: { src: string; alt: string }) => (
+					<Image
+						src={logo.src}
+						alt={logo.alt}
+						width={64}
+						height={64}
+						loading="lazy"
+					/>
+				))}
+			</div>
+		)
+	}
+</div>
